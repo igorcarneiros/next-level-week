@@ -1,0 +1,103 @@
+#page-create-point{
+    width: 90%;
+    max-width: 1100px; /*quando chega aqui, nao aumenta mais*/
+   
+    /* alinhamento de caixa pelo lado de fora da caixa */
+    margin: 0 auto; /* em cima e em baixo é zero, e vai ter um pequeno espaçamento lateral */
+}
+#page-create-point header{
+    margin-top: 48px;
+    display: flex;  /* alinhamento de caixa pelo lado de dentro da caixa */
+    justify-content: space-between;/* um cara pra um lado, outro pro outro, e um espação no meio */
+    align-items: center; /* os dois alinhados no meio da mesma caixa */
+}
+#page-create-point header a{
+    color: var(--title-color);
+    font-weight: bold;
+
+    display: flex; /* um ao lado do outro */
+    align-items: center;
+}
+#page-create-point header a span{
+    margin-right: 16px;
+    background-image: url(../assets/arrow-left.svg); /* só funciona  se tiver largura, altura, e display */
+    display: flex;
+    width: 20px;
+    height: 24px;
+}
+form{
+    background-color: white; /*  */
+    margin: 80px auto; /* em cima e em baixo é zero, e vai ter um pequeno espaçamento lateral */
+    padding: 64px;  /* preenchimento interno da caixa */
+    border-radius: 8px; /* arredonda as bordas */
+    max-width: 730px;
+    box-sizing: border-box; /* o tamanho da caixa vai ser a borda agora, pq a borda vem depois do padding por definição */
+}
+
+
+
+form h1{
+    font-size: 36px;
+}
+form fieldset{
+    margin-top: 67px;
+    border: 0;
+}
+form legend{
+    margin-bottom: 40px;
+}
+form legend h2{
+    font-size: 24px;
+}
+form .field{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+form .field-group{
+    display: flex;
+}
+form input,
+form select{
+    background-color: #f0f0f5;
+    border: 0;
+    padding: 16px 24px; /* espaçamento interno, altura */
+    font-size: 16px;
+    outline: none;/*  tira a borda da caixa quando ela é selecionada */
+    border-radius: 8px;
+}
+form select{
+    -webkit-appearance: none; /*chrome as vezes não aplica o estilo acima, então isso é feito para resertar a parte do browser */
+    -moz-appearance: none;
+    appearance: none;
+}
+form label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+/* como separar os blocos de endereço & numero/complemento? Tem como fazer uma borda em só um field. a seguinte fórmula faz isso:
+ela pega dentro fo form .field-group um .field que vier seguido de um .field! U único .field que tem um "irmão" ao lado é o numero/complemento. */
+form .field-group .field + .field{ /* o ultimo field que é aplicado */
+    margin-left: 24px;
+}
+form button{
+    width: 260px;
+    height: 56px;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 0;
+
+    margin-top: 40px;
+
+    transition: 400ms;
+}
+form button:hover{ /* quando passar o mouse em cima */ 
+    background-color: #2fb86e;
+}
