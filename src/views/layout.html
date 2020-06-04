@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="pt_br">
+    <!--linguagem do documento-->
+    <!-- Hypertext=links da página Markup=marcação de texto Language=linguagem de marcação de texto (não de programação!) -->
+    <head>
+        <meta charset="UTF-8">
+        <!--caracteres especiais como ç ~ etc-->
+        <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+        <!--ajusta a tela dependendo do dispositivo-->
+
+        {% block title %}
+            <title>Ecoleta</title>
+        {% endblock title %}
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/styles/main.css">
+
+        {% block styles %}{% endblock styles %}
+
+        <link rel="stylesheet" href="/styles/responsive.css">
+
+    </head>
+    <body>
+
+        <div id="{{ pageId }}">
+            {% block content %}{% endblock content %}
+        </div>
+
+        {% block modal %}{% endblock modal %}
+
+        {% block scripts %}{% endblock scripts %}
+
+    </body>
+</html>
