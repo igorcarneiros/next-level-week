@@ -67,7 +67,7 @@ const itemsToCollect = document.querySelectorAll(".items-grid li")//todos os "li
     itemLi.classList.toggle("selected")
 
     const itemId = event.target.dataset.id
- 
+    console.log('ITEM ID: ', itemId)
 
     
     //2 verificar se existem itens selecionados. se sim: pegar os itens selecionados.
@@ -91,6 +91,8 @@ const itemsToCollect = document.querySelectorAll(".items-grid li")//todos os "li
         selectedItems.push(itemId)
     }
 
+
+    console.log('selectedItems: ', selectedItems)
      //5 atualizar o campo escondido com os itens selecionados
       collectedItems.value = selectedItems
   }
